@@ -1,12 +1,10 @@
 var fs = require('fs');
 var locale = 'en_US';
 
-console.log("pre sound");
 var sounds = {
-  hover: new CCSound('../../media/sound/menu/menu-hover.ogg'),
-  select: new CCSound('../../media/sound/menu/menu-submit.ogg')
+  hover: new Sound('../../media/sound/menu/menu-hover.ogg'),
+  select: new Sound('../../media/sound/menu/menu-submit.ogg')
 };
-console.log("post sound", sounds);
 
 var itemDb = null;
 
@@ -60,12 +58,32 @@ function order(items) {
  * @param {function} matchItem Predicate that given an item returns whether it should be included.
  */
 function filter(items, matchItem) {
+  if (!matchItem) return items;
+
   let filtered = [];
   for (let item of items) {
     if (matchItem(item)) filtered.push(item);
   }
   return filtered;
 }
+
+function matchItem(item, cfg) {
+  if (!cfg) return true;
+  
+  // Filter by type
+  if (cfg.type) {
+    if (typeof cfg.type === 'string' && item.type !== cfg.type) return false;
+    if (cfg.type instanceof Array && cfg.type.indexOf(item.type) == -1) return false;
+  }
+  
+  // Filter by equipType
+  if (cfg.equipType) {
+    if (typeof cfg.equipType === 'string' && item.equipType !== cfg.equipType) return false;
+    if (cfg.equipType instanceof Array && cfg.equipType.indexOf(item.equipType) == -1) return false;
+  }
+
+  return true;
+};
 
 /**
  * Changes category.
@@ -121,4 +139,27 @@ fs.readFile('assets/data/item-database.json', (err, data) => {
 
   order(itemDb.items);
   showItems(itemDb.items);
+});
+
+let divCategories = document.getElementById('categories');
+let categoryButtons = [];
+
+for (let category of categories) {
+  let c = new CategoryButton('categories', category.name, category.icon, category.filter);
+  c.getEmitter().on('toggled', function(sender, status) {
+    if (status) {
+      let items = filter(itemDb.items, function(item) { return matchItem(item, sender.filter); });
+      showItems(items);
+    } else {
+      showItems(itemDb.items);
+    }
+  });
+
+  categoryButtons.push(c);
+}
+
+m.mount(divCategories, {
+  view: function(vnode) {
+    return categoryButtons.map(comp => m(comp, {}));
+  }
 });
