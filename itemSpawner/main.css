@@ -56,6 +56,10 @@ body {
   background: url('img/category-selected.png'), url('img/category.png');
 }
 
+.category:hover {
+  background: url('img/category-hover.png');
+}
+
 .category > img {
   position: absolute;
   left: 16px;
@@ -66,7 +70,7 @@ body {
 .category > span {
   position: absolute;
   left: 45px;
-  top: 9px;
+  top: 11px;
   user-select: none;
   color: white;
   font-family: 'PixelHallfeticaJP12P-Bold';

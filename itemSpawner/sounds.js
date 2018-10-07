@@ -1,4 +1,4 @@
-class CCSound {
+class Sound {
     constructor(src) {
         this.audio = document.createElement('audio');
         this.audio.src = src;

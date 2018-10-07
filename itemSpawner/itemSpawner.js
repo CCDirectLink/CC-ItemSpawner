@@ -1,12 +1,11 @@
 var fs = require('fs');
 var locale = 'en_US';
 
-console.log("pre sound");
 var sounds = {
-  hover: new CCSound('../../media/sound/menu/menu-hover.ogg'),
-  select: new CCSound('../../media/sound/menu/menu-submit.ogg')
+  hover: new Sound('../../media/sound/menu/menu-hover.ogg'),
+  cancel: new Sound('../../media/sound/menu/menu-cancel.ogg'),
+  select: new Sound('../../media/sound/menu/menu-submit.ogg')
 };
-console.log("post sound", sounds);
 
 var itemDb = null;
 
@@ -67,16 +66,21 @@ function filter(items, matchItem) {
   return filtered;
 }
 
+$(".category").hover(() => sounds.hover.play());
 /**
  * Changes category.
  */
 $(".category").click(function(evt) {
+
   let $this = $(this);
   let active = !$this.data('selected');
+  
+  let snd = active ? sounds.select : sounds.cancel;
+  snd.play();
 
   $this.data('selected', active);
   if (active) $this.addClass("catSelected"); else $this.removeClass("catSelected");
-  $this.siblings().removeClass("catSelected");
+  $this.siblings().removeClass("catSelected").data('selected', null);
 
   let filterCfg = active ? ($this.data('filter') || {}) : {};
   let f = function(item) {
