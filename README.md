@@ -3,6 +3,10 @@
 CrossCode mod to spawn items in.  
 Uses [CCLoader](https://github.com/CCDirectLink/CCLoader).
 
+Note that this mod will let you spawn in any item, but it does not trigger any events that normally happen when obtaining certain items. In particular, most valuables will not work when spawned.  
+
+**I can not guarantee that there are no items which will break the game when spawned through the item spawner!**
+
 ## Installation
 
 > CCLoader is required. Installation steps can be found on the [official repository](https://github.com/CCDirectLink/CCLoader).
