@@ -1,0 +1,6 @@
+{
+     "main" : "mod.js",
+     "name" : "ItemSpawner",
+     "version": "0.1.0",
+     "description" : "Allows you to easily spawn items."
+}

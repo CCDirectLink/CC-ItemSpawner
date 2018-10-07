@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'PixelHallfeticaJP12P-Bold';
+  src: url('../../../assets/impact/page/css/fonts/PixelHallfeticaJP12P-Bold.ttf');
+}
+
+body {
+  cursor: url(../../../assets/game/page/img/cursor-2.png), auto;
+  margin: 0px;
+  padding: 0px;
+  background: url('img/background.png') repeat;
+  background-size: 64px;
+  image-rendering: pixelated;
+}
+
+ul {
+  list-style: none;
+  display: table;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+li {
+  font-family: 'PixelHallfeticaJP12P-Bold';
+  color: white;
+  background: url('img/li.png') no-repeat;
+  text-align: center;
+  vertical-align: middle;
+  width: 284px;
+  height: 38px;
+  margin: 0px 0px 4px 0px;
+}
+
+li > p {
+  display: inline;
+  line-height: 38px;
+  user-select: none;
+}
+
+li:hover {
+  background: url('img/li-hover.png') no-repeat;
+}
