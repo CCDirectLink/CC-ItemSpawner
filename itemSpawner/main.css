@@ -52,6 +52,10 @@ body {
   position: relative;
 }
 
+.catSelected {
+  background: url('img/category-selected.png'), url('img/category.png');
+}
+
 .category > img {
   position: absolute;
   left: 16px;

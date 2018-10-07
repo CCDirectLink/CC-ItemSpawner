@@ -1,85 +1,82 @@
-let fs = require('fs');
-let locale = 'en_US';
+var fs = require('fs');
+var locale = 'en_US';
 
-let sounds = {
-  hover: new Sound('../../media/sound/menu/menu-hover.ogg'),
-  select: new Sound('../../media/sound/menu/menu-submit.ogg')
+console.log("pre sound");
+var sounds = {
+  hover: new CCSound('../../media/sound/menu/menu-hover.ogg'),
+  select: new CCSound('../../media/sound/menu/menu-submit.ogg')
 };
+console.log("post sound", sounds);
 
-let itemDb = null;
+var itemDb = null;
 
+/** Spawns the selected item. */
 function spawn() {
   let itemIndex = $(this).data('index');
-  console.log("Spawning item with index", itemIndex, itemDb.items[itemIndex]);
 
   let amount = 1;
   itemSpawner.spawn(itemIndex, amount);
   sounds.select.play();
 }
 
+/**
+* Shows items.
+* Clears item list and shows the given items.
+* @param {Array} items Items to show. Must have 'index' key set.
+*/
 function showItems(items) {
   let ul = $("#ulItems");
+  
+  // Clear items.
   ul.empty();
 
-  let i = 0;
+  // Show items.
   for (let item of items) {
     let name = item.name[locale] || item.name.en_US;
     
-    let li = $("<li>").append(
-      $("<p>").html(name)
-    );
-    li.addClass('item');
-    li.data('index', item.index);
-    li.click(spawn);
-    li.mouseenter(() => sounds.hover.play());
-    li.appendTo(ul);
-    
-    i++;
+    let li = $("<li>")
+      .append($("<p>").html(name))
+      .addClass('item')
+      .data('index', item.index)
+      .click(spawn)
+      .mouseenter(() => sounds.hover.play())
+      .appendTo(ul);
   }
 }
 
-function filter(items, matchItem) {
-  // Assign index
-  let i = 0;
-  let unfiltered = [];
-  console.log(items);
-  items.reduce(function(_, curr) {
-    curr.index = i;
-    console.log("filter", curr.name.en_US, curr.index);
-    unfiltered.push(curr);
-    i++;
-  }, {});
-
-  // Order
-  unfiltered.sort(function(a, b) {
+/**
+ * Orders array by item.order.
+ * @param {Array} items Items to order.
+ */
+function order(items) {
+  items.sort(function(a, b) {
     return a.order - b.order;
   });
+}
 
-  if (!matchItem) return unfiltered;
-  
-  // Filter
+/**
+ * Filters an item list.
+ * @param {Array} items Items to filter.
+ * @param {function} matchItem Predicate that given an item returns whether it should be included.
+ */
+function filter(items, matchItem) {
   let filtered = [];
-  for (let item of unfiltered) {
+  for (let item of items) {
     if (matchItem(item)) filtered.push(item);
   }
-  
   return filtered;
 }
 
-fs.readFile('assets/data/item-database.json', (err, data) => {
-  if (err) throw err;
-  itemDb = JSON.parse(data);
-  let items = filter(itemDb.items);
-  showItems(items);
-});
-
+/**
+ * Changes category.
+ */
 $(".category").click(function(evt) {
   let $this = $(this);
   let active = !$this.data('selected');
 
   $this.data('selected', active);
-  $this.css('background', active ? 'url(img/category-selected.png), url(img/category.png)' : 'url(img/category.png');
-  $this.siblings().data('selected', false).css('background', 'url(img/category.png');
+  if (active) $this.addClass("catSelected"); else $this.removeClass("catSelected");
+  $this.siblings().removeClass("catSelected");
 
   let filterCfg = active ? ($this.data('filter') || {}) : {};
   let f = function(item) {
@@ -99,9 +96,29 @@ $(".category").click(function(evt) {
   };
 
   let items = filter(itemDb.items, f);
+  order(items);
   showItems(items);
 });
 
+/**
+ * On Esc, close window.
+ */
 document.addEventListener('keydown', (evt) => {
   if (evt.code === "Escape") window.close();
+});
+
+/**
+ * Read and show items.
+ * Sets index of each item for spawning.
+ */
+fs.readFile('assets/data/item-database.json', (err, data) => {
+  if (err) throw err;
+  
+  itemDb = JSON.parse(data);
+  for (let i = 0; i < itemDb.items.length; i++) {
+    itemDb.items[i].index = i;
+  }
+
+  order(itemDb.items);
+  showItems(itemDb.items);
 });
