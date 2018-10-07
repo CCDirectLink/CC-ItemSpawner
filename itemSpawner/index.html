@@ -6,7 +6,43 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <ul id="ulItems"></ul>
+    <div class="col">
+      <ul id="ulItems" class="items"></ul>
+    </div>
+    <div class="col categories">
+      <div class="category">
+        <img src="img/ic-all.png">
+        <span>All</span>
+      </div>
+      <div class="category" data-filter='{"type": "CONS"}'>
+        <img src="img/ic-consumable.png">
+        <span>Consumables</span>
+      </div>
+      <div class="category" data-filter='{"type": "EQUIP", "equipType": "ARM"}'>
+        <img src="img/ic-arm.png">
+        <span>Arms</span>
+      </div>
+      <div class="category" data-filter='{"type": "EQUIP", "equipType": "HEAD"}'>
+        <img src="img/ic-head.png">
+        <span>Head</span>
+      </div>
+      <div class="category" data-filter='{"type": "EQUIP", "equipType": "TORSO"}'>
+        <img src="img/ic-torso.png">
+        <span>Torso</span>
+      </div>
+      <div class="category" data-filter='{"type": "EQUIP", "equipType": "FEET"}'>
+        <img src="img/ic-legs.png">
+        <span>Legs</span>
+      </div>
+      <div class="category" data-filter='{"type": "TRADE"}'>
+        <img src="img/ic-trade.png">
+        <span>Trade</span>
+      </div>
+      <div class="category" data-filter='{"type": "KEY"}'>
+        <img src="img/ic-valuables.png">
+        <span>Valuables</span>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="sounds.js"></script>

@@ -12,14 +12,17 @@ body {
   image-rendering: pixelated;
 }
 
-ul {
+.col {
+  float: left;
+}
+
+.items {
   list-style: none;
-  display: table;
-  margin: 0px auto;
+  margin: 0px;
   padding: 0px;
 }
 
-li {
+.item {
   font-family: 'PixelHallfeticaJP12P-Bold';
   color: white;
   background: url('img/li.png') no-repeat;
@@ -30,12 +33,38 @@ li {
   margin: 0px 0px 4px 0px;
 }
 
-li > p {
+.item > p {
   display: inline;
   line-height: 38px;
   user-select: none;
+  font-size: 18px;
+  text-shadow: 2px 2px 0px black;
 }
 
-li:hover {
+.item:hover {
   background: url('img/li-hover.png') no-repeat;
+}
+
+.category {
+  width: 210px;
+  height: 42px;
+  background: url('img/category.png');
+  position: relative;
+}
+
+.category > img {
+  position: absolute;
+  left: 16px;
+  top: 9px;
+  user-select: none;
+}
+
+.category > span {
+  position: absolute;
+  left: 45px;
+  top: 9px;
+  user-select: none;
+  color: white;
+  font-family: 'PixelHallfeticaJP12P-Bold';
+  font-size: 18px;
 }
