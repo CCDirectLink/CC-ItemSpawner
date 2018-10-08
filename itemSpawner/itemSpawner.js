@@ -43,29 +43,6 @@ function showItems(items) {
   }
 }
 
-/**
- * Orders array by item.order.
- * @param {Array} items Items to order.
- */
-function order(items) {
-  items.sort(function(a, b) {
-    return a.order - b.order;
-  });
-}
-
-/**
- * Filters an item list.
- * @param {Array} items Items to filter.
- * @param {function} matchItem Predicate that given an item returns whether it should be included.
- */
-function filter(items, matchItem) {
-  let filtered = [];
-  for (let item of items) {
-    if (matchItem(item)) filtered.push(item);
-  }
-  return filtered;
-}
-
 $(".category").hover(() => sounds.hover.play());
 /**
  * Changes category.
@@ -99,8 +76,7 @@ $(".category").click(function(evt) {
     return true;
   };
 
-  let items = filter(itemDb.items, f);
-  order(items);
+  let items = itemDb.filter(f);
   showItems(items);
 });
 
@@ -117,12 +93,7 @@ document.addEventListener('keydown', (evt) => {
  */
 fs.readFile('assets/data/item-database.json', (err, data) => {
   if (err) throw err;
+  itemDb = new ItemDatabase(data);
   
-  itemDb = JSON.parse(data);
-  for (let i = 0; i < itemDb.items.length; i++) {
-    itemDb.items[i].index = i;
-  }
-
-  order(itemDb.items);
-  showItems(itemDb.items);
+  showItems(itemDb.getItems());
 });
