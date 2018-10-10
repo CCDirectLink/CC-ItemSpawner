@@ -37,7 +37,7 @@ itemSpawner.spawn = function(item, amount = 1, hidden = false) {
         'assets/mods/itemSpawner/index.html',
         {
           position: 'center',
-          width: 511,
+          width: 515,
           height: 416
         },
         (window) => {
@@ -48,6 +48,7 @@ itemSpawner.spawn = function(item, amount = 1, hidden = false) {
            *       itemSpawner is not available on document load. */
           window.on('loaded', () => {
             window.window.itemSpawner = itemSpawner;
+            window.window.simplify = simplify;
           });
 
           /* Allow new itemSpawner window. */

@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'PixelHallfeticaJP12P-Bold';
-  src: url('../../../assets/impact/page/css/fonts/PixelHallfeticaJP12P-Bold.ttf');
+  src: url('/assets/impact/page/css/fonts/PixelHallfeticaJP12P-Bold.ttf');
 }
 
 body {
-  cursor: url(../../../assets/game/page/img/cursor-2.png), auto;
+  cursor: url('/assets/game/page/img/cursor-2.png'), auto;
   margin: 0px;
   padding: 0px;
-  background: url('img/background.png') repeat;
+  background: url('../img/background.png') repeat;
   background-size: 64px;
   image-rendering: pixelated;
 }
@@ -16,7 +16,12 @@ body {
   float: left;
 }
 
+.colItems {
+  padding-left: 212px;
+}
+
 .items {
+  position: relative;
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -25,39 +30,52 @@ body {
 .item {
   font-family: 'PixelHallfeticaJP12P-Bold';
   color: white;
-  background: url('img/li.png') no-repeat;
+  background: url('../img/li.png') no-repeat;
   text-align: center;
   vertical-align: middle;
+  position: relative;
   width: 284px;
   height: 38px;
   margin: 0px 0px 4px 0px;
 }
 
+.item > span {
+  position: absolute;
+  left: 14px;
+  top: 9px;
+}
+
 .item > p {
-  display: inline;
-  line-height: 38px;
   user-select: none;
   font-size: 18px;
   text-shadow: 2px 2px 0px black;
+  position: absolute;
+  left: 48px;
+  top: 12px;
+  margin: 0px;
 }
 
 .item:hover {
-  background: url('img/li-hover.png') no-repeat;
+  background: url('../img/li-hover.png') no-repeat;
+}
+
+.categories { 
+  position: fixed;
 }
 
 .category {
   width: 210px;
   height: 42px;
-  background: url('img/category.png');
+  background: url('../img/category.png');
   position: relative;
 }
 
 .catSelected {
-  background: url('img/category-selected.png'), url('img/category.png');
+  background: url('../img/category-selected.png'), url('../img/category.png');
 }
 
 .category:hover {
-  background: url('img/category-hover.png');
+  background: url('../img/category-hover.png');
 }
 
 .category > img {

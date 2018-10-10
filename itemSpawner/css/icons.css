@@ -1,0 +1,212 @@
+.icon {
+  background-image: url('/assets/media/font/icons-items.png');
+  background-repeat: no-repeat;
+  background-size: 292px 256px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Shield */
+.item-shield, .item-shield-0 {
+  background-position: -2px -6px;
+}
+
+.item-shield, .item-shield-1 {
+  background-position: -2px -40px;
+}
+
+.item-shield, .item-shield-2 {
+  background-position: -2px -74x;
+}
+
+.item-shield, .item-shield-3 {
+  background-position: -2px -108px;
+}
+
+.item-shield, .item-shield-4 {
+  background-position: -2px -142px;
+}
+
+.item-shield, .item-shield-5 {
+  background-position: -2px -176px;
+}
+
+/* Helm */
+.item-helm, .item-helm-0 {
+  background-position: -32px -6px;
+}
+
+.item-helm, .item-helm-1 {
+  background-position: -32px -40px;
+}
+
+.item-helm, .item-helm-2 {
+  background-position: -32px -74px;
+}
+
+.item-helm, .item-helm-3 {
+  background-position: -32px -108px;
+}
+
+.item-helm, .item-helm-4 {
+  background-position: -32px -142px;
+}
+
+.item-helm, .item-helm-5 {
+  background-position: -32px -176px;
+}
+
+/* Sword */
+.item-sword, .item-sword-0 {
+  background-position: -62px -6px;
+}
+
+.item-sword, .item-sword-1 {
+  background-position: -62px -40px;
+}
+
+.item-sword, .item-sword-2 {
+  background-position: -62px -74px;
+}
+
+.item-sword, .item-sword-3 {
+  background-position: -62px -108px;
+}
+
+.item-sword, .item-sword-4 {
+  background-position: -62px -142px;
+}
+
+.item-sword, .item-sword-5 {
+  background-position: -62px -176px;
+}
+
+/* Belt */
+.item-belt, .item-belt-0 {
+  background-position: -92px -6px;
+}
+
+.item-belt, .item-belt-1 {
+  background-position: -92px -40px;
+}
+
+.item-belt, .item-belt-2 {
+  background-position: -92px -74px;
+}
+
+.item-belt, .item-belt-3 {
+  background-position: -92px -108px;
+}
+
+.item-belt, .item-belt-4 {
+  background-position: -92px -142px;
+}
+
+.item-belt, .item-belt-5 {
+  background-position: -92px -176px;
+}
+
+/* Shoe */
+.item-shoe, .item-shoe-0 {
+  background-position: -122px -6px;
+}
+
+.item-shoe, .item-shoe-1 {
+  background-position: -122px -40px;
+}
+
+.item-shoe, .item-shoe-2 {
+  background-position: -122px -74px;
+}
+
+.item-shoe, .item-shoe-3 {
+  background-position: -122px -108px;
+}
+
+.item-shoe, .item-shoe-4 {
+  background-position: -122px -142px;
+}
+
+.item-shoe, .item-shoe-5 {
+  background-position: -122px -176px;
+}
+
+/* Items */
+.item-items, .item-items-0 {
+  background-position: -152px -6px;
+}
+
+.item-items, .item-items-1 {
+  background-position: -152px -40px;
+}
+
+.item-items, .item-items-2 {
+  background-position: -152px -74px;
+}
+
+.item-items, .item-items-3 {
+  background-position: -152px -108px;
+}
+
+.item-items, .item-items-4 {
+  background-position: -152px -142px;
+}
+
+.item-items, .item-items-5 {
+  background-position: -152px -176px;
+}
+
+/* Key */
+.item-key, .item-key-0 {
+  background-position: -182px -6px;
+}
+
+.item-key, .item-key-1 {
+  background-position: -182px -40px;
+}
+
+.item-key, .item-key-2 {
+  background-position: -182px -74px;
+}
+
+.item-key, .item-key-3 {
+  background-position: -182px -108px;
+}
+
+.item-key, .item-key-4 {
+  background-position: -182px -142px;
+}
+
+.item-key, .item-key-5 {
+  background-position: -182px -176px;
+}
+
+/* Trade */
+.item-trade, .item-trade-0 {
+  background-position: -212px -6px;
+}
+
+.item-trade, .item-trade-1 {
+  background-position: -212px -40px;
+}
+
+.item-trade, .item-trade-2 {
+  background-position: -212px -74px;
+}
+
+.item-trade, .item-trade-3 {
+  background-position: -212px -108px;
+}
+
+.item-trade, .item-trade-4 {
+  background-position: -212px -142px;
+}
+
+.item-trade, .item-trade-5 {
+  background-position: -212px -176px;
+}
+
+/* Toggle */
+.item-toggle, .item-toggle-0 {
+  background-position: -242px -6px;
+}

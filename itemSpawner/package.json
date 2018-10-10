@@ -1,6 +1,11 @@
 {
-     "main" : "mod.js",
-     "name" : "ItemSpawner",
+     "main": "mod.js",
+     "name": "ItemSpawner",
+     "module": true,
      "version": "0.1.0",
-     "description" : "Allows you to easily spawn items."
+     "description": "Allows you to easily spawn items.",
+     "dependencies": {
+          "@types/jquery": "^3.3.14",
+          "@types/node": "^10.11.6"
+     }
 }
