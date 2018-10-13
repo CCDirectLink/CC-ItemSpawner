@@ -48,16 +48,24 @@ $(".rarity").click(function() {
     delete rarities[r];
     sounds.getSound('cancel').play();
   }
+  console.log(rarities);
+
   filters.set('rarity', rarities);
 
   showFiltered();
 });
 
-$("#searchText").on('keyup change', function() {
+let noKeySound = {
+  [16]: true, [17]: true, [18]: true,
+  [27]: true, [37]: true, [39]: true
+};
+$("#searchText").on('keyup change', function(evt) {
   let v = $(this).val();
   filters.set('text', v);
   showFiltered();
-}).on('keydown', function() { sounds.getSound('hover').play(); });
+}).on('keydown', function(evt) {
+  if (!noKeySound[evt.which]) sounds.getSound('hover').play();
+});
 
 
 /**

@@ -43,7 +43,7 @@ export class ItemDatabase {
   
   public static filterByRarity(items: Array<Item>, rarities: any) {
     items = items.filter(function(item) {
-      if (!item.rarity) return false;
+      if (typeof item.rarity !== "number") return false;
       return rarities.hasOwnProperty(item.rarity) && rarities[item.rarity];
     });
     return items;

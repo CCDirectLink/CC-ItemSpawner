@@ -62,7 +62,7 @@ itemSpawner.spawn = function(item, amount = 1, hidden = false) {
 
     /* Open itemSpawner window on 'I' key press. */
     document.addEventListener('keydown', (evt) => {
-      if (evt.code === "KeyI") openInterface();
+      if (evt.code === "KeyU") openInterface();
     });
   };
 
