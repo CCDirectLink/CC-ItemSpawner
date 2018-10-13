@@ -7,13 +7,13 @@ Note that this mod will let you spawn in any item, but it does not trigger any e
 
 **I can not guarantee that there are no items which will break the game when spawned through the item spawner!**
 
-![](https://i.imgur.com/RcwMa4H.png)
+![](https://i.imgur.com/DvuB8Ae.png)
 
 ## Installation
 
 > CCLoader is required. Installation steps can be found on the [official repository](https://github.com/CCDirectLink/CCLoader).
 
-* [Download a release code](https://github.com/Silverfeelin/CC-ItemSpawner/releases).
+* [Download a release](https://github.com/Silverfeelin/CC-ItemSpawner/releases).
 * Unpack `itemSpawner` to `/CrossCode/assets/mods`.
 
 ## Usage
