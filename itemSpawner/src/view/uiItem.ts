@@ -21,7 +21,8 @@ export class UIItem {
         }
 
         let p = <HTMLParagraphElement>document.createElement('p');
-        p.innerText = this.item.name['en_US'];
+        p.className = "itemName";
+        p.innerText = `[${this.item.index}] ${this.item.name['en_US']}`;
 
         li.appendChild(img);
         li.appendChild(p);

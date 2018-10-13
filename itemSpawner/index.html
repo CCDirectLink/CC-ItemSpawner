@@ -7,13 +7,52 @@
     <link rel="stylesheet" href="css/icons.css">
   </head>
   <body>
-      <div id="categories" class="col categories">
-      </div>
+    <div id="categories" class="categories">
 
-    <div class="col colItems">
-      <ul id="ulItems" class="items"></ul>
     </div>
-    
+
+    <div id="rarities" class="rarities">
+      <div class="rarity" data-index="0">
+          <span class="icon-rarity icon-rarity-0">
+            <img src="img/rarityCheck.png">
+          </span>
+      </div>
+      <div class="rarity" data-index="1">
+          <span class="icon-rarity icon-rarity-1">
+            <img src="img/rarityCheck.png">
+          </span>
+      </div>
+      <div class="rarity" data-index="2">
+          <span class="icon-rarity icon-rarity-2">
+            <img src="img/rarityCheck.png">
+          </span>
+      </div>
+      <div class="rarity" data-index="3">
+          <span class="icon-rarity icon-rarity-3">
+            <img src="img/rarityCheck.png">
+          </span>
+      </div>
+      <div class="rarity" data-index="4">
+          <span class="icon-rarity icon-rarity-4">
+            <img src="img/rarityCheck.png">
+          </span>
+      </div>
+      <div class="rarity" data-index="5">
+          <span class="icon-rarity icon-rarity-5">
+            <img src="img/rarityCheck.png">
+          </span>
+      </div>
+    </div>
+
+    <div id="search" class="search">
+        <input id="searchText" type="text">
+    </div>
+
+    <div id="items" class="items">
+      <div class="itemScroll">
+        <ul id="ulItems" class=""></ul>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="module" src="./dist/itemSpawner.js"></script>

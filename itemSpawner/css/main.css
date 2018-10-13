@@ -3,75 +3,41 @@
   src: url('/assets/impact/page/css/fonts/PixelHallfeticaJP12P-Bold.ttf');
 }
 
+@font-face {
+  font-family: 'PixelHallfeticaJP10P-Regular';
+  src: url('/assets/impact/page/css/fonts/PixelHallfeticaJP10P-Regular.ttf')
+}
+
 body {
   cursor: url('/assets/game/page/img/cursor-2.png'), auto;
   margin: 0px;
   padding: 0px;
-  background: url('../img/background.png') repeat;
-  background-size: 64px;
+  background: url('../img/background.png') no-repeat;
   image-rendering: pixelated;
 }
 
-.col {
-  float: left;
-}
-
-.colItems {
-  padding-left: 212px;
-}
-
-.items {
-  position: relative;
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-.item {
-  font-family: 'PixelHallfeticaJP12P-Bold';
-  color: white;
-  background: url('../img/li.png') no-repeat;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  width: 284px;
-  height: 38px;
-  margin: 0px 0px 4px 0px;
-}
-
-.item > span {
+.categories {
+  background: url('../img/categories.png') no-repeat;
   position: absolute;
-  left: 14px;
-  top: 9px;
-}
-
-.item > p {
-  user-select: none;
-  font-size: 18px;
-  text-shadow: 2px 2px 0px black;
-  position: absolute;
-  left: 48px;
-  top: 12px;
-  margin: 0px;
-}
-
-.item:hover {
-  background: url('../img/li-hover.png') no-repeat;
-}
-
-.categories { 
-  position: fixed;
+  left: 2px;
+  top: 2px;
+  width: 172px;
+  height: 214px;
 }
 
 .category {
-  width: 210px;
-  height: 42px;
-  background: url('../img/category.png');
+  width: 164px;
+  height: 20px;
+  background: url('../img/category.png') no-repeat;
   position: relative;
+  top: 22px;
+  left: 4px;
+  margin-bottom: 4px;
+  text-align: center;
 }
 
 .catSelected {
-  background: url('../img/category-selected.png'), url('../img/category.png');
+  background: url('../img/category-hover.png') no-repeat;
 }
 
 .category:hover {
@@ -86,11 +52,132 @@ body {
 }
 
 .category > span {
-  position: absolute;
+  /*position: absolute;
   left: 45px;
-  top: 11px;
+  top: 11px;*/
   user-select: none;
   color: white;
   font-family: 'PixelHallfeticaJP12P-Bold';
   font-size: 18px;
+}
+
+.rarities {
+  background: url('../img/rarities.png') no-repeat;
+  position: absolute;
+  left: 2px;
+  top: 222px;
+  width: 172px;
+  height: 44px;
+}
+
+.rarity {
+  position: relative;
+  left: 2px;
+  top: 4px;
+  padding-left: 24px;
+  display: inline-block;
+}
+
+.rarity > span {
+  position: absolute;
+  user-select: none;
+  left: 4px;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+}
+
+.search {
+  background: url('../img/search.png') no-repeat;
+  position: absolute;
+  left: 2px;
+  top: 270px;
+  width: 172px;
+  height: 46px;
+}
+
+#searchText {
+  font-family: 'PixelHallfeticaJP10P-Regular';
+  font-size: 18px;
+  width: 160px;
+  height: 16px;
+  margin-top: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.items {
+  background: url('../img/items.png') no-repeat;
+  position: absolute;
+  left: 180px;
+  top: 2px;
+  width: 302px;
+  height: 312px;
+}
+
+.itemScroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 296px;
+  margin-top: 18px;
+}
+
+.items ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.item {
+  font-family: 'PixelHallfeticaJP12P-Bold';
+  color: white;
+  background: url('../img/li.png') no-repeat;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  width: 284px;
+  height: 30px;
+  margin: 4px;
+}
+
+.item > span {
+  position: absolute;
+  left: 8px;
+  top: 4px;
+}
+
+.itemName {
+  user-select: none;
+  font-size: 18px;
+  text-shadow: 2px 2px 0px black;
+  position: absolute;
+  left: 40px;
+  top: 8px;
+  margin: 0px;
+}
+
+.item:hover {
+  background: url('../img/li-hover.png') no-repeat;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

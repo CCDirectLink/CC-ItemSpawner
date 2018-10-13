@@ -41,6 +41,23 @@ export class ItemDatabase {
     return true;
   }
   
+  public static filterByRarity(items: Array<Item>, rarities: any) {
+    items = items.filter(function(item) {
+      if (!item.rarity) return false;
+      return rarities.hasOwnProperty(item.rarity) && rarities[item.rarity];
+    });
+    return items;
+  }
+
+  public static filterByText(items: Array<Item>, text: string) {
+    text = text.toLowerCase();
+    items = items.filter(function(item) {
+      let name : string = item.name.en_US.toLowerCase();
+      return name.indexOf(text) >= 0 || item.index.toString().indexOf(text) >= 0;
+    });
+    return items;
+  }
+
   public static filter(items : Array<Item>, cfg : any) : Array<Item> {
     items = items.filter(function(item) {
       return ItemDatabase.filterPredicate(item, cfg);

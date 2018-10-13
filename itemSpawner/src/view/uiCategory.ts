@@ -18,13 +18,15 @@ export class UICategory {
         div.className = "category";
         div.dataset['filter'] = JSON.stringify(this.filter);
         
+        /* Deprecated
         let img = <HTMLImageElement>document.createElement('img');
         img.src = this.image;
+        */
         
         let span = <HTMLSpanElement>document.createElement('span');
         span.innerText = this.name;
 
-        div.appendChild(img);
+        //div.appendChild(img);
         div.appendChild(span);
         return div;
     }

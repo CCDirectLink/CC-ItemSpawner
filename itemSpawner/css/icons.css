@@ -210,3 +210,35 @@
 .item-toggle, .item-toggle-0 {
   background-position: -242px -6px;
 }
+
+.icon-rarity {
+  background-image: url('../img/rarityButton.png');
+  background-repeat: no-repeat;
+  background-size: 108px 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.icon-rarity-0 {
+  background-position: 0px 0px;
+}
+
+.icon-rarity-1 {
+  background-position: -18px 0px;
+}
+
+.icon-rarity-2 {
+  background-position: -36px 0px;
+}
+
+.icon-rarity-3 {
+  background-position: -54px 0px;
+}
+
+.icon-rarity-4 {
+  background-position: -72px 0px;
+}
+
+.icon-rarity-5 {
+  background-position: -90px 0px;
+}

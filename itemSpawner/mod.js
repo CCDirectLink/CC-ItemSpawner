@@ -37,8 +37,9 @@ itemSpawner.spawn = function(item, amount = 1, hidden = false) {
         'assets/mods/itemSpawner/index.html',
         {
           position: 'center',
-          width: 515,
-          height: 416
+          width: 476,
+          height: 310,
+          resizable: false
         },
         (window) => {
           itemSpawner.window = window;

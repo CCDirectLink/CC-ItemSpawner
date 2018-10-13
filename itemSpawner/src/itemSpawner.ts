@@ -12,6 +12,7 @@ import { UIItem } from './view/uiItem.js';
 let sounds = SoundManager.default;
 var itemDb : ItemDatabase;
 let filters : Map<string, any> = new Map<string, any>();
+filters.set('rarity', { [0]: true, [1]: true, [2]: true, [3]: true, [4]: true, [5]: true })
 
 /* Load categories */
 let catDiv = document.getElementById('categories');
@@ -22,6 +23,10 @@ Categories.forEach(category => {
     let on = filters.get('category') !== category.filter;
     filters.set('category', on ? category.filter : null);
     
+    if (on)
+    $(dom).addClass("catSelected");
+    else
+    $(dom).removeClass("catSelected");
     // I'm not even gonna attempt this one w/o jQuery
     $(dom).siblings().removeClass("catSelected");
     
@@ -30,6 +35,30 @@ Categories.forEach(category => {
   });
   catDiv.appendChild(dom);
 });
+
+$(".rarity").click(function() {
+  let $img = $(this).find("img");
+  $img.toggle();
+  let rarities = filters.get('rarity');
+  let r = parseInt($(this).data("index"));
+  if ($img.is(":visible")){
+    rarities[r] = true;
+    sounds.getSound('submit').play();
+  } else {
+    delete rarities[r];
+    sounds.getSound('cancel').play();
+  }
+  filters.set('rarity', rarities);
+
+  showFiltered();
+});
+
+$("#searchText").on('keyup change', function() {
+  let v = $(this).val();
+  filters.set('text', v);
+  showFiltered();
+}).on('keydown', function() { sounds.getSound('hover').play(); });
+
 
 /**
  * Spawns an item.
@@ -42,11 +71,24 @@ function spawn(item : Item) {
 
 function showFiltered() {
   let items = itemDb.getItems();
-  for (let cfg of filters) {
-    cfg = cfg[1];
-    items = ItemDatabase.filter(items, cfg);
+
+  if (filters.has('rarity'))
+  {
+    items = ItemDatabase.filterByRarity(items, filters.get('rarity'));
   }
 
+  if (filters.has('category'))
+  {
+    items = ItemDatabase.filter(items, filters.get('category'));
+  }
+
+  if (filters.has('text')) {
+    let text = filters.get('text');
+    if (text && text.trim()) {
+      items = ItemDatabase.filterByText(items, text);
+    }
+  }
+  
   showItems(items);
 }
 
