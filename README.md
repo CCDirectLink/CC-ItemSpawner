@@ -13,7 +13,7 @@ Note that this mod will let you spawn in any item, but it does not trigger any e
 
 > CCLoader is required. Installation steps can be found on the [official repository](https://github.com/CCDirectLink/CCLoader).
 
-* [Download a release](https://github.com/Silverfeelin/CC-ItemSpawner/releases).
+* [Download a release](https://github.com/CCDirectLink/CC-ItemSpawner/releases).
 * Unpack `itemSpawner` to `/CrossCode/assets/mods`.
 
 ## Usage
