@@ -25,4 +25,4 @@ Note that this mod will let you spawn in any item, but it does not trigger any e
 
 ## Building the Sources
 
-To build the source code, simply use `tsc` within the `itemSpawner` folder to compile the code. This will generate files in the `dist` folder that the mod depends on. All other files are ready as-is.
+To build the source code, simply use `npm install` followed by `tsc` within the `itemSpawner` folder to compile the code. This will generate files in the `dist` folder that the mod depends on. All other files are ready as-is.
