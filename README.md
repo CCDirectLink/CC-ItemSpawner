@@ -13,16 +13,12 @@ Note that this mod will let you spawn in any item, but it does not trigger any e
 
 > CCLoader is required. Installation steps can be found on the [official repository](https://github.com/CCDirectLink/CCLoader).
 
-* [Download a release](https://github.com/CCDirectLink/CC-ItemSpawner/releases).
+* [Download a release](https://github.com/Silverfeelin/CC-ItemSpawner/releases).
 * Unpack `itemSpawner` to `/CrossCode/assets/mods`.
 
 ## Usage
 
 > If you set your game to pause when unfocused, the game will be paused while spawning items.
 
-* Press <kbd>I</kbd> in-game to open the item spawner.
+* Press <kbd>U</kbd> in-game to open the item spawner.
 * Select an item to spawn it.
-
-## Building the Sources
-
-To build the source code, simply use `tsc` within the `itemSpawner` folder to compile the code. This will generate files in the `dist` folder that the mod depends on. All other files are ready as-is.
