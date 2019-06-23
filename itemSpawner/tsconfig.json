@@ -9,6 +9,6 @@
         "target": "es6",
         "module": "es6",
         "sourceMap": true,
-        "outDir": "dist",
+        "outDir": "dist/js",
     }
 }

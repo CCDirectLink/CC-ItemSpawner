@@ -1,9 +1,12 @@
 {
+     "name": "item-spawner",
+     "version": "1.0.0",
      "main": "mod.js",
-     "name": "ItemSpawner",
-     "module": true,
-     "version": "0.1.0",
-     "description": "Allows you to easily spawn items.",
+     "scripts": {
+          "build": "npm run clean && tsc && npm run copy",
+          "clean": "node ./scripts/clean.js",
+          "copy": "node ./scripts/copy.js"
+     },
      "devDependencies": {
           "@types/jquery": "^3.3.14",
           "@types/node": "^10.11.6"
